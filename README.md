@@ -6,33 +6,34 @@ A serverless AWS pipeline that transforms raw retail interaction and sales data 
 
 ## 📊 Project Overview
 
-This project simulates a finance & business intelligence system for a retail company. It uses serverless AWS tools to query customer interactions, join it with financial data, and produce real-time dashboards.
+This project simulates a finance & business intelligence system for a retail company.  
+It uses serverless AWS tools to query customer interactions, join them with financial data, and produce real-time dashboards.
 
 ---
 
-## 🧱 Architecture
+## 🛠 Architecture
 
 ![Architecture Diagram](Figure1.png)
 
 ### Pipeline Steps:
-- **Data Ingestion:** Raw interaction and sales data uploaded to Amazon S3.
-- **ETL & Cataloging:** AWS Glue crawlers detect schema and create tables.
-- **Query Layer:** Amazon Athena performs SQL joins, filters, and aggregations.
-- **Dashboard Layer:** Amazon QuickSight displays interactive KPI charts.
+- **Data Ingestion:** Raw interaction and sales data uploaded to Amazon S3.  
+- **ETL & Cataloging:** AWS Glue crawlers detect schema and create tables.  
+- **Query Layer:** Amazon Athena performs SQL joins, filters, and aggregations.  
+- **Dashboard Layer:** Amazon QuickSight displays interactive KPI charts.  
 
 ---
 
-## 🗃️ Input Dataset Example
+## 📂 Input Dataset Example
 
 Sample of the cleaned `interactions_clean` dataset stored in S3:
 
-| user_id | item_id  | event_type | timestamp   |
-|---------|----------|------------|-------------|
-| User_1  | Item_101 | VIEW       | 1744260000  |
-| User_1  | Item_102 | PURCHASE   | 1744260100  |
-| User_2  | Item_105 | VIEW       | 1744260200  |
-| User_3  | Item_106 | VIEW       | 1744260300  |
-| User_3  | Item_107 | PURCHASE   | 1744260400  |
+| user_id | item_id  | event_type | timestamp |
+|---------|----------|------------|-----------|
+| User_1  | Item_101 | VIEW       | 1744260000|
+| User_1  | Item_102 | PURCHASE   | 1744260100|
+| User_2  | Item_105 | VIEW       | 1744260200|
+| User_3  | Item_106 | VIEW       | 1744260300|
+| User_3  | Item_107 | PURCHASE   | 1744260400|
 
 ![Athena Table View](Figure2.png)
 
@@ -41,11 +42,11 @@ Sample of the cleaned `interactions_clean` dataset stored in S3:
 ## 🔍 Athena SQL Queries
 
 ### 1. Count Events by Type
-
 ```sql
 SELECT event_type, COUNT(*) AS event_count
 FROM interactions_clean_interactions_clean
 GROUP BY event_type;
+
 
 2. Preview First 10 Rows
 sql
@@ -53,6 +54,7 @@ Copy
 Edit
 SELECT * FROM interactions_clean_interactions_clean
 LIMIT 10;
+
 
 📈 QuickSight Dashboards
 Pie Chart – Event Types
@@ -65,21 +67,24 @@ Includes real-time filters (e.g. user_id, event_type), dynamic KPI cards, and tr
 
 Bar Chart – Events Over Time
 X-axis: Event timestamp
-Grouped by event_type
+Grouped by event_type.
 
 
-🔁 ETL with AWS Glue
+🛠 ETL with AWS Glue
 AWS Glue Crawlers automatically scan the S3 bucket, detect schema, and create tables in the Data Catalog.
 This enables Athena to immediately query fresh data without manual table setup.
 
 
-🧠 Advanced Enhancements
+
+💡 Advanced Enhancements
 Simulated optional features using other AWS tools:
 
-Enhancement	Tools Used
-Sales forecasting	Amazon Forecast
-Real-time ingestion	API Gateway + Lambda
-Natural language BI	Amazon QuickSight Q
+Sales forecasting – Amazon Forecast
+
+Real-time ingestion – API Gateway + Lambda
+
+Natural language BI – Amazon QuickSight Q
+
 
 
 ✅ Summary Table
@@ -89,7 +94,7 @@ ETL	AWS Glue Crawlers
 SQL Engine	Amazon Athena
 Visualization	Amazon QuickSight
 Forecasting (opt)	Amazon Forecast
-Real-time ingest	API Gateway + Lambda
+Real-time ingest (opt)	API Gateway + Lambda
 User Auth (opt)	Amazon Cognito
 
 🚀 Use Cases
@@ -99,20 +104,7 @@ Customer behavior analytics
 
 Real-time sales monitoring
 
-Cost-effective serverless architecture
-
-🏗️ AWS Services Used
-Amazon S3
-
-AWS Glue
-
-Amazon Athena
-
-Amazon QuickSight
-
-(Optional: Amazon Forecast, Lambda, API Gateway, Cognito)
-
-📁 Repo Structure
+🗂 Repo Structure
 bash
 Copy
 Edit
@@ -128,9 +120,10 @@ finance-bi-dashboard/
 ├── Figure8.png   # Glue Crawler Output
 ├── Figure9.png   # Optional Enhancements
 └── README.md
-🔗 Author
+👤 Author
 Joshua Barradas
 Cloud AI Researcher | AWS Solutions Builder | Retail + Finance AI
 📍 Leeds, UK
 📧 barradasjoshua48@gmail.com
 🔗 LinkedIn
+
