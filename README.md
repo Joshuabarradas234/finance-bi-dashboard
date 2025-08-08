@@ -16,8 +16,10 @@ Real-time operational insights
 
 🧱 Architecture
 
-Figure 1 – End-to-end AWS Finance & BI architecture
-This diagram shows the entire pipeline: data ingestion into Amazon S3, schema detection with AWS Glue, SQL querying via Amazon Athena, and visualization with Amazon QuickSight. Optional modules such as Amazon Forecast and API Gateway are included for future scaling.
+![Figure 1 – End-to-end AWS Finance & BI architecture](Figure1.png)
+
+*This diagram shows the entire pipeline: data ingestion into Amazon S3, schema detection with AWS Glue, SQL querying via Amazon Athena, and visualization with Amazon QuickSight. Optional modules such as Amazon Forecast and API Gateway are included for future scaling.*
+
 
 Pipeline Steps
 Data Ingestion – Upload raw interaction & sales CSV files to Amazon S3.
@@ -39,13 +41,13 @@ User_3	Item_106	VIEW	1744260300
 User_3	Item_107	PURCHASE	1744260400
 
 
-Figure 2 – Athena table view of the interactions_clean dataset
+![Figure 2 – Athena Table View](Figure 2.png)
 The screenshot shows the dataset after being processed by AWS Glue and queried in Athena, confirming that the schema was detected correctly.
 
 🔍 Athena SQL Queries
 1. Count Events by Type
 
-Figure 3 – Athena SQL query counting events by type
+![Figure 3 – Event Count Query](Figure3.png)
 This query aggregates the number of customer interactions (VIEW and PURCHASE) to provide a quick breakdown of engagement.
 
 sql
@@ -56,8 +58,8 @@ FROM interactions_clean_interactions_clean
 GROUP BY event_type;
 2. Preview First 10 Rows
 
-Figure 4 – Athena query previewing the first 10 rows
-This query validates data quality and schema mapping before deeper analytics.
+![Figure 4 – LIMIT Query Preview](Figure 4.png)  
+*Athena query previewing the first 10 rows of the dataset. This step validates schema mapping and data quality before running deeper analytics.*
 
 sql
 Copy
@@ -67,38 +69,30 @@ LIMIT 10;
 📈 QuickSight Dashboards
 Interactive Pie Chart – Event Types
 
-Figure 5 – Pie chart in QuickSight showing VIEW vs PURCHASE distribution
-Provides an at-a-glance representation of customer behavior patterns, useful for marketing and sales optimization.
+![Figure 5 – QuickSight Pie Chart](Figure5.png)  
+*QuickSight pie chart showing VIEW vs PURCHASE distribution. This visualization gives marketing and sales teams a clear view of customer behavior patterns for campaign optimization.*
 
 Main Dashboard – Filters & KPIs
 
-Figure 6 – Main QuickSight dashboard with interactive filters and KPI cards
+![Figure 6 – Main QuickSight Dashboard](Figure 6.png)  
+*Main QuickSight dashboard with interactive filters (`user_id`, `event_type`) and KPI cards. Key metrics include total views, purchases, and conversion rate, helping teams drill into customer activity.*
 
-Filters: user_id, event_type
-
-KPIs: Total views, purchases, and conversion rate.
-The dashboard is designed for business teams to drill down into customer activity.
-
-Bar Chart – Events Over Time
-
-Figure 7 – Bar chart showing event counts over time grouped by event type
-Useful for spotting spikes in customer activity and aligning them with campaigns or promotions.
+![Figure 7 – Bar Chart: Events Over Time](Figure7.png)  
+*QuickSight bar chart showing event counts over time grouped by event type. Useful for spotting spikes in customer activity and aligning them with campaigns or promotions.*
 
 🔁 ETL with AWS Glue
 
-Figure 8 – AWS Glue Crawler configuration screen
-The Glue Crawler is set to scan the S3 bucket, detect schema changes, and automatically update the Glue Data Catalog—ensuring Athena always queries the latest structure.
+![Figure 8 – AWS Glue Crawler](Figure8.png)  
+*AWS Glue Crawler configuration screen. The crawler scans the S3 bucket, detects schema changes, and updates the Glue Data Catalog so Athena always queries the latest structure.*
 
 🧠 Advanced Enhancements
 
-Figure 9 – Future AWS enhancements for the BI system
-Planned improvements include:
-
-Sales forecasting with Amazon Forecast
-
-Real-time ingestion with API Gateway + Lambda
-
-Natural language queries with QuickSight Q
+![Figure 9 – Future Enhancements Plan](Figure9.png)  
+*Planned future AWS enhancements for the BI system, including:*
+- *Sales forecasting with Amazon Forecast*
+- *Real-time ingestion with API Gateway + Lambda*
+- *Natural language queries with QuickSight Q*
+- *Advanced predictive analytics and personalization*
 
 ✅ Summary Table
 Layer	AWS Service
