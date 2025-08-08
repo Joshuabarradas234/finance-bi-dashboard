@@ -62,9 +62,8 @@ FROM interactions_clean_interactions_clean
 GROUP BY event_type;
 2. Preview First 10 Rows
 
-![Figure 4 – LIMIT Query Preview](Figure 4.png)  
-*Athena query previewing the first 10 rows of the dataset. This step validates schema mapping and data quality before running deeper analytics.*
-
+![Figure 4 – Athena Query Preview](Figure%204.png)  
+**Figure 4 – Athena query preview**: This query previews the first 10 rows of the dataset in Athena, validating data quality and confirming schema mapping before deeper analytics.
 sql
 Copy
 Edit
@@ -74,29 +73,24 @@ LIMIT 10;
 Interactive Pie Chart – Event Types
 
 ![Figure 5 – QuickSight Pie Chart](Figure5.png)  
-*QuickSight pie chart showing VIEW vs PURCHASE distribution. This visualization gives marketing and sales teams a clear view of customer behavior patterns for campaign optimization.*
+**Figure 5 – QuickSight Pie Chart**: Pie chart in Amazon QuickSight showing VIEW vs PURCHASE distribution. It provides an at-a-glance view of customer behavior patterns, aiding in marketing and sales optimization.
 
 Main Dashboard – Filters & KPIs
 
-![Figure 6 – Main QuickSight Dashboard](Figure 6.png)  
-*Main QuickSight dashboard with interactive filters (`user_id`, `event_type`) and KPI cards. Key metrics include total views, purchases, and conversion rate, helping teams drill into customer activity.*
+![Figure 6 – Main QuickSight Dashboard](Figure6.png)  
+**Figure 6 – Main QuickSight Dashboard**: Interactive dashboard with filters (`user_id`, `event_type`) and KPI cards. Displays total views, purchases, and conversion rate for in-depth customer analytics.
 
-![Figure 7 – Bar Chart: Events Over Time](Figure7.png)  
-*QuickSight bar chart showing event counts over time grouped by event type. Useful for spotting spikes in customer activity and aligning them with campaigns or promotions.*
-
+![Figure 7 – QuickSight Bar Chart](Figure7.png)  
+**Figure 7 – QuickSight Bar Chart**: Bar chart showing event counts over time grouped by event type. Useful for identifying spikes in customer activity and aligning them with campaigns or promotions.
 🔁 ETL with AWS Glue
 
-![Figure 8 – AWS Glue Crawler](Figure8.png)  
-*AWS Glue Crawler configuration screen. The crawler scans the S3 bucket, detects schema changes, and updates the Glue Data Catalog so Athena always queries the latest structure.*
+![Figure 8 – AWS Glue Crawler Configuration](Figure8.png)  
+**Figure 8 – AWS Glue Crawler Configuration**: AWS Glue Crawler setup screen. Configured to scan the S3 bucket, detect schema changes, and automatically update the Glue Data Catalog so Athena always queries the latest data.
 
 🧠 Advanced Enhancements
 
 ![Figure 9 – Future Enhancements Plan](Figure9.png)  
-*Planned future AWS enhancements for the BI system, including:*
-- *Sales forecasting with Amazon Forecast*
-- *Real-time ingestion with API Gateway + Lambda*
-- *Natural language queries with QuickSight Q*
-- *Advanced predictive analytics and personalization*
+**Figure 9 – Future Enhancements Plan**: Planned AWS enhancements for the BI system. Includes adding Amazon Forecast for sales prediction, integrating Lambda for automation, and extending data ingestion with API Gateway.
 
 ✅ Summary Table
 Layer	AWS Service
