@@ -5,90 +5,116 @@ This project simulates a retail business intelligence pipeline using AWS service
 🧠 Architecture Overview
 Figure A.1 – Architecture Diagram
 The pipeline begins by uploading customer interaction and financial data into Amazon S3.
-
 AWS Glue crawls and catalogs the data into tables.
-
 Amazon Athena enables SQL queries to aggregate, filter, and join datasets.
-
 Amazon QuickSight visualizes KPIs such as event frequency and purchase patterns.
 
+![Figure A.1](images/Figure\ 1.png)
+
 🛠️ AWS Services Used
-• Amazon S3 – Stores raw .csv interaction and financial data
-• AWS Glue – Crawls datasets and builds schema in Glue Data Catalog
-• Amazon Athena – Runs SQL queries over structured data
-• Amazon QuickSight – Creates interactive dashboards
-• IAM – Secures access to Athena, S3, and Glue
-• CloudWatch – Optional logging for error/performance monitoring
+Amazon S3 – Stores raw .csv interaction and financial data
+
+AWS Glue – Crawls datasets and builds schema in Glue Data Catalog
+
+Amazon Athena – Runs SQL queries over structured data
+
+Amazon QuickSight – Creates interactive dashboards
+
+IAM – Secures access to Athena, S3, and Glue
+
+CloudWatch – Optional logging for query error/performance monitoring
 
 💡 Key Features
-• End-to-end BI pipeline built on AWS
-• Auto-schema detection with Glue Crawlers
-• SQL-based querying using Athena
-• QuickSight dashboards with pie/bar/time series
-• Join queries between event and revenue data
-• Forecasting and visual drill-downs
-• Azure Power BI also tested as an alternative
+End-to-end BI pipeline built on AWS
 
-🧪 Sample Query Snippet (Athena SQL)
+Auto-schema detection with Glue Crawlers
 
+SQL-based querying using Athena
+
+QuickSight dashboards with pie/bar/time series
+
+Join queries between event and revenue data
+
+Forecasting and drill-downs
+
+Azure Power BI tested as alternative
+
+✏️ Sample Query Snippet (Athena SQL)
 sql
 Copy
 Edit
 SELECT event_type, COUNT(*) AS total_events  
 FROM interactions_clean  
 GROUP BY event_type;
-This query aggregates customer events (e.g., VIEW, PURCHASE) from the cleaned dataset using Athena.
+Aggregates customer events (e.g., VIEW, PURCHASE) from the cleaned dataset using Athena.
 
 📸 Dashboard and Data Pipeline Screenshots
+Figure 1 – Sample Table View in Athena
+Raw structured table view after Glue ingestion. Shows schema accuracy and SQL-readiness.
 
-Figure 1 – Sample Table View in Athena (Structured Dataset Preview)
-Demonstrates a raw yet structured tabular view of user interaction data in Amazon Athena after being ingested and catalogued via AWS Glue. Shows schema accuracy and readiness for SQL querying — foundational for analytics pipelines.
+![Figure 1](images/Figure\ 1.png)
 
-🔍 Figure 2 – AWS Glue Crawler Configuration for Data Cataloging
-Displays configuration of the AWS Glue Crawler used to automatically detect schema from raw .csv files stored in S3. Highlights schema inference, automation of ETL setup, and integration with Athena for serverless querying.
+Figure 2 – AWS Glue Crawler Setup
+Crawler configuration for detecting schema from S3 .csv files. Shows ETL automation and Athena integration.
 
-🔗 Figure 3 – Athena SQL Join Query (Financial + Interaction Data)
-Presents a complex SQL join between interaction logs and transaction records. Demonstrates the ability to correlate user actions (e.g., VIEW, PURCHASE) with financial outcomes, unlocking valuable behavioural insights.
+![Figure 2](images/Figure\ 2.png)
 
-📊 Figure 4 – Aggregating Customer Events by Type (Athena GROUP BY)
-Uses SQL aggregation to generate a summary of customer actions segmented by type. Enables rapid identification of event frequency trends, such as product views vs purchases, directly supporting engagement metrics.
+Figure 3 – Athena SQL Join Query (Financial + Interaction)
+Joins interaction logs with transaction data (e.g., PURCHASE). Enables behaviour + spend analytics.
 
-✅ Figure 5 – Athena LIMIT Query for Data Validation
-Simple preview query to fetch the first 10 rows from the interactions_clean table. Used for data quality validation, schema verification, and confirming ETL correctness before downstream reporting.
+![Figure 3](images/Figure\ 3.png)
 
-🥧 Figure 6 – QuickSight Pie Chart (Event Type Distribution)
-An interactive pie chart in Amazon QuickSight that visually breaks down user behaviour by event type (e.g., VIEW vs PURCHASE). Ideal for non-technical stakeholders to grasp user interaction proportions.
+Figure 4 – Aggregating Customer Events by Type (GROUP BY)
+SQL-generated summary of user events by type. Helps identify product engagement and usage trends.
 
-📈 Figure 7 – QuickSight Bar Chart of Events by Date (Temporal Patterns)
-Visualizes daily user interactions using a time-series bar chart. Supports analysis of peak activity periods, user behaviour seasonality, and temporal performance trends relevant to marketing and ops teams.
+![Figure 4](images/Figure\ 4.png)
 
-🔮 Figure 8 – Forecasting Dashboard (QuickSight ML-Enhanced KPI Panel)
-Features advanced forecasting and drill-down capabilities powered by QuickSight’s built-in ML models. Projects future interaction volumes and sales trends, enabling proactive business decision-making.
+Figure 5 – Athena LIMIT 10 Query for Validation
+Preview query to inspect schema/data structure before downstream reporting.
 
-🧩 Figure 9 – Interactive Drill-Down Dashboard (QuickSight Panel View)
-Final compiled QuickSight dashboard showcasing combined pie, bar, and forecast panels. Includes interactivity, filtering, and cross-chart data exploration — suitable for C-level insights and presentations.
+![Figure 5](images/Figure\ 5.png)
 
+Figure 6 – QuickSight Pie Chart (Event Types)
+Interactive pie chart showing user event type distribution (VIEW, PURCHASE).
 
+![Figure 6](images/Figure\ 6.png)
 
-🧩 Future Enhancements
-• Integrate anomaly detection (e.g., AWS Lookout for Metrics)
-• Add SageMaker forecasts for retail demand
-• Use QuickSight Q for natural language BI insights
-• Compare tuning/latency differences between Azure and AWS pipelines
+Figure 7 – QuickSight Bar Chart (Event Over Time)
+Time-series bar chart showing user events per day. Helps analyse seasonality, campaign peaks.
+
+![Figure 7](images/Figure\ 7.png)
+
+Figure 8 – Forecasting Dashboard (QuickSight ML)
+Forecasting + KPI panel with QuickSight ML. Predicts user events and sales trends.
+
+![Figure 8](images/Figure\ 8.png)
+
+Figure 9 – Drill-Down Dashboard (QuickSight Panel View)
+Combined pie, bar, and forecast panel. Cross-filtering, interactive exploration. Great for stakeholders.
+
+![Figure 9](images/Figure\ 9.png)
+
+🌱 Future Enhancements
+Integrate anomaly detection (e.g., AWS Lookout for Metrics)
+
+Add SageMaker forecasts for demand prediction
+
+Test QuickSight Q for natural language BI
+
+Compare Azure/AWS query latency and tuning
 
 📁 Suggested Repo Structure
-
 bash
 Copy
 Edit
 finance-bi-dashboard/
-├── raw_data/        # S3 data samples (CSV)
-├── athena_queries/  # SQL queries used for analysis
-├── images/          # Screenshots and architecture diagrams
-├── quicksight/      # Dashboard designs or JSON exports
-└── README.md        # This file
-🙋 Contact & Credits
+├── raw_data/         # S3 data samples (.csv)
+├── athena_queries/   # SQL queries used for analysis
+├── images/           # Screenshots and diagrams (Figures 1–9)
+├── quicksight/       # Dashboard JSON exports (optional)
+└── README.md         # This file
+👤 Contact & Credits
 Joshua Barradas
 📍 Leeds, UK
 📧 barradasjoshua48@gmail.com
-💻 GitHub: @Joshuabarradas234
+🔗 GitHub: @Joshuabarradas234
