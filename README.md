@@ -52,47 +52,47 @@ Aggregates customer events (e.g., VIEW, PURCHASE) from the cleaned dataset using
 Figure 1 – Sample Table View in Athena
 Raw structured table view after Glue ingestion. Shows schema accuracy and SQL-readiness.
 
-![Figure 1](images/Figure\ 1.png)
+![Figure 1](images/Figure%201.png)
 
 Figure 2 – AWS Glue Crawler Setup
 Crawler configuration for detecting schema from S3 .csv files. Shows ETL automation and Athena integration.
 
-![Figure 2](images/Figure\ 2.png)
+![Figure 2](images/Figure%201.png)
 
 Figure 3 – Athena SQL Join Query (Financial + Interaction)
 Joins interaction logs with transaction data (e.g., PURCHASE). Enables behaviour + spend analytics.
 
-![Figure 3](images/Figure\ 3.png)
+![Figure 3](images/Figure%201.png)
 
 Figure 4 – Aggregating Customer Events by Type (GROUP BY)
 SQL-generated summary of user events by type. Helps identify product engagement and usage trends.
 
-![Figure 4](images/Figure\ 4.png)
+![Figure 4](images/Figure%201.png)
 
 Figure 5 – Athena LIMIT 10 Query for Validation
 Preview query to inspect schema/data structure before downstream reporting.
 
-![Figure 5](images/Figure\ 5.png)
+![Figure 5](images/Figure%201.png)
 
 Figure 6 – QuickSight Pie Chart (Event Types)
 Interactive pie chart showing user event type distribution (VIEW, PURCHASE).
 
-![Figure 6](images/Figure\ 6.png)
+![Figure 6](images/Figure%201.png)
 
 Figure 7 – QuickSight Bar Chart (Event Over Time)
 Time-series bar chart showing user events per day. Helps analyse seasonality, campaign peaks.
 
-![Figure 7](images/Figure\ 7.png)
+![Figure 7](images/Figure%201.png)
 
 Figure 8 – Forecasting Dashboard (QuickSight ML)
 Forecasting + KPI panel with QuickSight ML. Predicts user events and sales trends.
 
-![Figure 8](images/Figure\ 8.png)
+![Figure 8](images/Figure%201.png)
 
 Figure 9 – Drill-Down Dashboard (QuickSight Panel View)
 Combined pie, bar, and forecast panel. Cross-filtering, interactive exploration. Great for stakeholders.
 
-![Figure 9](images/Figure\ 9.png)
+![Figure 9](images/Figure%201.png)
 
 🌱 Future Enhancements
 Integrate anomaly detection (e.g., AWS Lookout for Metrics)
