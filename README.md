@@ -16,9 +16,14 @@ Real-time operational insights
 
 🧱 Architecture
 
-![Figure 1 – End-to-end AWS Finance & BI architecture](Figure1.png)
+![Figure 1 – End-to-End AWS Finance & BI Architecture](Figure1.png)  
+*This diagram shows the complete serverless AWS pipeline for Finance & Business Intelligence. It includes:*
+- *Data ingestion into Amazon S3*
+- *Schema detection and cataloging with AWS Glue*
+- *SQL querying via Amazon Athena*
+- *Visualization with Amazon QuickSight*
+- *Optional scaling modules such as Amazon Forecast, API Gateway, and Cognito*
 
-*This diagram shows the entire pipeline: data ingestion into Amazon S3, schema detection with AWS Glue, SQL querying via Amazon Athena, and visualization with Amazon QuickSight. Optional modules such as Amazon Forecast and API Gateway are included for future scaling.*
 
 
 Pipeline Steps
@@ -41,15 +46,14 @@ User_3	Item_106	VIEW	1744260300
 User_3	Item_107	PURCHASE	1744260400
 
 
-![Figure 2 – Athena Table View](Figure 2.png)
-The screenshot shows the dataset after being processed by AWS Glue and queried in Athena, confirming that the schema was detected correctly.
+![Figure 2 – Athena Table View](Figure 2.png)  
+*Athena table view of the `interactions_clean` dataset. This confirms the dataset schema was correctly detected by AWS Glue after ingestion and is ready for SQL queries.*
 
 🔍 Athena SQL Queries
 1. Count Events by Type
 
-![Figure 3 – Event Count Query](Figure3.png)
-This query aggregates the number of customer interactions (VIEW and PURCHASE) to provide a quick breakdown of engagement.
-
+![Figure 3 – Event Count Query](Figure3.png)  
+*Athena SQL query counting events by type (VIEW and PURCHASE). This query is used to calculate customer engagement metrics and identify the distribution of interactions.*
 sql
 Copy
 Edit
