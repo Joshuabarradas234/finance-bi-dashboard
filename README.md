@@ -9,7 +9,8 @@ AWS Glue crawls and catalogs the data into tables.
 Amazon Athena enables SQL queries to aggregate, filter, and join datasets.
 Amazon QuickSight visualizes KPIs such as event frequency and purchase patterns.
 
-![Figure A.1](images/Figure\ 1.png)
+![Figure 1](images/Figure%201.png)
+
 
 🛠️ AWS Services Used
 Amazon S3 – Stores raw .csv interaction and financial data
