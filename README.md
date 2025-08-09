@@ -73,6 +73,7 @@ Core stack: Amazon Athena, AWS Glue, Amazon S3, Amazon QuickSight.
 📋 Pipeline Workflow
 
 ![Figure 2 – Data ingestion to S3](Figure2.png)
+
 Figure 2: Raw CSV files uploaded to Amazon S3 bucket.
 Data Ingestion → Upload raw CSV sales/transaction data to Amazon S3.
 
