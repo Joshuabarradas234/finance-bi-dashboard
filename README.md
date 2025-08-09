@@ -1,7 +1,6 @@
 Finance & Business Intelligence Dashboard – AWS Serverless Retail Analytics
 
 
-
 📜 Table of Contents
 
 🚀 Executive Summary
@@ -54,7 +53,6 @@ Problem: Retail organisations often lack a cost-effective, near-real-time analyt
 Solution: A fully serverless AWS BI pipeline enabling fast ingestion, schema detection, SQL analysis, and dashboarding — all without managing servers.
 
 Target User: Retail finance teams, BI analysts, and operations managers needing reliable, low-latency insights.
-
 
 Assumptions & Trade-offs:
 
