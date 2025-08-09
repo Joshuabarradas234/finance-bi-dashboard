@@ -1,66 +1,35 @@
 Finance & Business Intelligence Dashboard – AWS Serverless Retail Analytics
 
 
-📜 Table of Contents
 
-🚀 Executive Summary
 
-📦 Project Overview
+## 📜 Table of Contents
+- [🚀 Executive Summary](#-executive-summary)
+- [📦 Project Overview](#-project-overview)
+- [🏗️ Architecture](#-architecture)
+- [📋 Pipeline Workflow](#-pipeline-workflow)
+- [📊 Dataset Example](#-dataset-example)
+- [🧩 AWS Services Used](#-aws-services-used)
+- [💡 Service Choice Rationale](#-service-choice-rationale)
+- [🖥️ Athena Query Examples](#️-athena-query-examples)
+- [📊 Proven Business Impact](#-proven-business-impact)
+- [📈 Dashboard & Insights](#-dashboard--insights)
+- [🔧 Glue Crawler Automation](#-glue-crawler-automation)
+- [🛡️ Security](#️-security)
+- [♻️ Reliability](#-reliability)
+- [💰 Cost Estimate](#-cost-estimate)
+- [⚙️ Ops & CICD](#-ops--cicd)
+- [📡 Observability](#-observability)
+- [🗺️ Future Enhancements](#-future-enhancements)
+- [📌 Lessons Learned & Leadership Principles](#-lessons-learned--leadership-principles)
+- [🚀 Deployment](#-deployment)
+- [🧪 Testing & Validation](#-testing--validation)
+- [📂 Suggested Repo Layout](#-suggested-repo-layout)
+- [📄 License & Contact](#-license--contact)
 
-🏗️ Architecture
 
-📋 Pipeline Workflow
 
-📊 Dataset Example
 
-🧩 AWS Services Used
-
-💡 Service Choice Rationale
-
-🖥️ Athena Query Examples
-
-📊 Proven Business Impact
-
-📈 Dashboard & Insights
-
-🔧 Glue Crawler Automation
-
-🛡️ Security
-
-♻️ Reliability
-
-💰 Cost Estimate
-
-⚙️ Ops & CI/CD
-
-📡 Observability
-
-🗺️ Future Enhancements
-
-📌 Lessons Learned & Leadership Principles
-
-🚀 Deployment
-
-🧪 Testing & Validation
-
-📂 Suggested Repo Layout
-
-📄 License & Contact
-
-🚀 Executive Summary
-Problem: Retail organisations often lack a cost-effective, near-real-time analytics system that integrates finance and sales data without heavy infrastructure overhead.
-
-Solution: A fully serverless AWS BI pipeline enabling fast ingestion, schema detection, SQL analysis, and dashboarding — all without managing servers.
-
-Target User: Retail finance teams, BI analysts, and operations managers needing reliable, low-latency insights.
-
-Assumptions & Trade-offs:
-
-Chose serverless for cost & scalability; trades some query speed for lower cost compared to provisioned clusters.
-
-Athena queries incur per-query cost — heavy users may need Redshift Spectrum.
-
-Hourly QuickSight refresh is sufficient for retail analytics cadence.
 
 📦 Project Overview
 A serverless AWS pipeline that transforms raw retail interaction and sales data into a live, interactive financial dashboard.
