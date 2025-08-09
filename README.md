@@ -147,9 +147,9 @@ Dashboard Adoption	90% end-user adoption	Higher ROI
 
 ![Figure 5 – KPI dashboard](Figure5.png)
 
-![Figure 6 – Monthly trend analysis](Figure6.png) 
+![Figure 6 – Monthly trend analysis](Figure%206.png)
 
-![Figure 7 – Category-level breakdown](Figure7.png) 
+![Figure 7 – Category-level breakdown](Figure%207.png)
 
 🔧 Glue Crawler Automation
 ![Figure 8 – Glue crawler automation](Figure8.png)
