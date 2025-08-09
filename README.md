@@ -82,6 +82,7 @@ ETL & Cataloging → AWS Glue crawlers detect schema and store metadata in the D
 Query Layer → Amazon Athena executes SQL directly on S3.
 
 ![Figure 4 – Athena query example](Figure4.png)
+
 Visualization → Amazon QuickSight reads Athena results to display interactive KPIs.
 
 📊 Dataset Example
