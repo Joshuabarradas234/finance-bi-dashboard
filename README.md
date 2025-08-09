@@ -68,15 +68,17 @@ Core stack: Amazon Athena, AWS Glue, Amazon S3, Amazon QuickSight.
 
 🏗️ Architecture
 
-Figure 1: Serverless retail BI architecture showing data ingestion to S3, Glue cataloging, Athena querying, and QuickSight dashboards.
+![Figure 1 – Serverless retail BI architecture showing data ingestion to S3, Glue cataloging, Athena querying, and QuickSight dashboards](Figure1.png)
 
 📋 Pipeline Workflow
+![Figure 2 – Data ingestion to S3](Figure2.png)
+Figure 2: Raw CSV files uploaded to Amazon S3 bucket.
 Data Ingestion → Upload raw CSV sales/transaction data to Amazon S3.
 
 ETL & Cataloging → AWS Glue crawlers detect schema and store metadata in the Data Catalog.
-
+![Figure 3 – Dataset example](Figure3.png)
 Query Layer → Amazon Athena executes SQL directly on S3.
-
+![Figure 4 – Athena query example](Figure4.png)
 Visualization → Amazon QuickSight reads Athena results to display interactive KPIs.
 
 📊 Dataset Example
@@ -139,12 +141,11 @@ Cost Optimization	Avoided $2.5k/mo EC2 DB costs	Reduced TCO
 Dashboard Adoption	90% end-user adoption	Higher ROI
 
 📈 Dashboard & Insights
-Figure 5: KPI dashboard showing revenue, units sold, category performance.
-Figure 6: Monthly trend with moving averages for seasonality.
-Figure 7: Category-level performance breakdown.
-
+![Figure 5 – KPI dashboard](Figure5.png)
+![Figure 6 – Monthly trend analysis](Figure6.png)
+![Figure 7 – Category-level breakdown](Figure7.png)
 🔧 Glue Crawler Automation
-Figure 8: Automated schema detection in AWS Glue.
+![Figure 8 – Glue crawler automation](Figure8.png)
 
 🛡️ Security
 json
@@ -203,7 +204,7 @@ Athena query >5s latency
 QuickSight refresh failure
 
 🗺️ Future Enhancements
-Figure 9: Add AWS Forecast for demand prediction; integrate Redshift Spectrum.
+![Figure 9 – AWS Forecast integration](Figure9.png); integrate Redshift Spectrum.
 
 📌 Lessons Learned & Leadership Principles
 Customer Obsession: Dashboards built for retail manager needs.
