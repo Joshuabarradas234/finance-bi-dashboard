@@ -1,5 +1,6 @@
-Finance & Business Intelligence Dashboard – AWS Serverless Retail Analytics
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+# Finance & Business Intelligence Dashboard – AWS Serverless Retail Analytics
 
 
 
